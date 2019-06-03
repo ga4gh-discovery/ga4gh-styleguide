@@ -6,14 +6,17 @@ We draw from experience developing several mature APIs across a range of GA4GH w
 
 # Table of Contents
 
-[//]: # (- documentaion, GitFLow, Licence, Contributing, Apache voting, propertyNaming, styleguide hierarchy, URI/URN/ID/contact, Swagger tools, CI validation, commit message convention, github labels)
+[//]: # (- documentation, GitFLow, License, Contributing, Apache voting, propertyNaming, styleguide hierarchy, URI/URN/ID/contact, Swagger tools, CI validation, commit message convention, github labels)
 - [Style](#style)
 - [Format](#format)
 - [File Type](#file-type)
 - [File Name](#file-name)
+- [License](#license)
 - [FAQ](#faq)
 
 # Style
+
+**TL;DR: REST.**
 
 First, you need to decide on the style of your API. People typically consider [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) and [gRPC](https://grpc.io/). While [there are alid reasons to choose gRPC](https://docs.microsoft.com/en-us/aspnet/core/grpc/comparison?view=aspnetcore-3.0), with performance being the most commonly cited one, we recommend you choose REST.
 
@@ -35,6 +38,8 @@ Standards only make sense if they're well adopted, and familiarity and ease of u
 
 # Format
 
+**TL;DR: OpenAPI 3.**
+
 There are 4 formats that have been used to specify REST APIs in GA4GH - [OpenAPI](https://swagger.io/specification/), [JSON Schema](https://json-schema.org/), [Protocol Buffers](https://developers.google.com/protocol-buffers/), and [Avro IDL](https://avro.apache.org/docs/1.8.2/idl.html).
 
 Some projects have gone through several of these formats over time. For example, Beacon started with Avro IDL, evolved to Protocol Buffers, and finally landed on OpenAPI. Major reasons for moving away from Avro IDL and Protocol Buffers included the facts that they're not great for specifying REST APIs (dealing with endpoints, requests/responses, and not leveraging the binary format offered by their respective technologies), and are not developer-friendly (steep learning curve, small user base). On top of that, JSON Schema and OpenAPI provide generally better tooling. As such, we advise against using these formats nowadays.
@@ -45,15 +50,27 @@ Once you decide to use OpenAPI, you have a choice between version 3, and older 2
 
 # File type
 
+**TL;DR: YAML.**
+
 An OpenAPI document that conforms to the specification is itself a JSON object, which may be represented either in JSON or YAML format. YAML is a superset of JSON, [is generally considered more human-readable](https://www.quora.com/What-situation-would-you-use-YAML-instead-of-JSON-or-XML), and [has good extra features such as commenting, aliasing and anchoring](http://sangsoonam.github.io/2017/03/13/yaml-vs-json.html). We consider readability and commenting very useful when specifying APIs, and recommend using YAML over JSON.
 
 XML [is considered legacy and is not recommended](https://everypageispageone.com/2016/01/28/why-does-xml-suck/).
 
 # File name
 
+**TL;DR: `openapi.yaml`.**
+
 Most likely, your specification is going to consist of a single file. We recommend you name it `openapi.yaml`. This is the common default name, and would allow you to run tools with their default setting.
 
 If your specification consists of multiple files, prefer domain-specific names.
+
+# License
+
+**TL;DR: Apache 2.0.**
+
+While GA4GH does not prescribe a particular license, practically all our projects use [Apache 2.0](/LICENSE). This will most likely suit your needs.
+
+Include the license text in your repository [like this](LICENSE).
 
 # FAQ
 
