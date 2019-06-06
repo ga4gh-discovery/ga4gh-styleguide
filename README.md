@@ -11,6 +11,7 @@ We draw from experience developing several mature APIs across a range of GA4GH w
 - [Format](#format)
 - [File Type](#file-type)
 - [File Name](#file-name)
+- [Testing](#testing)
 - [License](#license)
 - [FAQ](#faq)
 
@@ -63,6 +64,14 @@ XML [is considered legacy and is not recommended](https://everypageispageone.com
 Most likely, your specification is going to consist of a single file. We recommend you name it `openapi.yaml`. This is the common default name, and would allow you to run tools with their default setting.
 
 If your specification consists of multiple files, prefer domain-specific names.
+
+# Testing
+
+**TL;DR: Travis CI with OAS Validator.**
+
+WIth the OAS specification being the main artifact you're delivering, it's important you test it continuously. We recommend setting up a CI solution and trigger builds on pull requests. Travis CI is the most common choice in GA4GH due to its ease of use.
+
+At minimum, you should make sure your specification is valid. Several GA4GH specifications use [OAS Validator](https://github.com/mcupak/oas-validator), we recommend you do the same.
 
 # License
 
