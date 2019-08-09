@@ -6,15 +6,21 @@ We draw from experience developing several mature APIs across a range of GA4GH w
 
 # Table of Contents
 
-[//]: # (- documentation, GitFLow, License, Contributing, Apache voting, propertyNaming, styleguide hierarchy, URI/URN/ID/contact, Swagger tools, CI validation, commit message convention, github labels)
+[//]: # (- documentation, GitFLow, Contributing, Apache voting, propertyNaming, styleguide hierarchy, URI/URN/ID/contact, Swagger tools, CI validation, commit message convention, default repository facets enabled, repository naming, hosting on github)
 - [Style](#style)
 - [Format](#format)
 - [File Type](#file-type)
 - [File Name](#file-name)
 - [Testing](#testing)
+- [Repository Setup](#repository-setup)
+  - [Hosting](#hosting)
+  - [Issues](#issues)
+    - [Labels](#labels)
+    - [Milestones](#milestones)
 - [License](#license)
+- [Versioning](#versioning)
 - [FAQ](#faq)
-
+    
 # Style
 
 **TL;DR: REST.**
@@ -25,16 +31,16 @@ The main reasons include:
 
 - Compatibility.
 
-    The vast majority of GA4GH specifications are REST APIs, e.g. [Beacon](https://github.com/ga4gh-beacon/specification), [Beacon Network](https://github.com/ga4gh-beacon/beacon-network-specification), [Service Info](https://github.com/ga4gh-discovery/service-info), [Service Registry](https://github.com/ga4gh-discovery/service-registry), [Workflow Execution Service](https://github.com/ga4gh/workflow-execution-service-schemas), [Data Repository Service](https://github.com/ga4gh/data-repository-service-schemas), [Tool Registry Service](https://github.com/ga4gh/tool-registry-service-schemas), [Task Execution Service](https://github.com/ga4gh/task-execution-schemas).
+  The vast majority of GA4GH specifications are REST APIs, e.g. [Beacon](https://github.com/ga4gh-beacon/specification), [Beacon Network](https://github.com/ga4gh-beacon/beacon-network-specification), [Service Info](https://github.com/ga4gh-discovery/service-info), [Service Registry](https://github.com/ga4gh-discovery/service-registry), [Workflow Execution Service](https://github.com/ga4gh/workflow-execution-service-schemas), [Data Repository Service](https://github.com/ga4gh/data-repository-service-schemas), [Tool Registry Service](https://github.com/ga4gh/tool-registry-service-schemas), [Task Execution Service](https://github.com/ga4gh/task-execution-schemas).
 
 - Familiarity.
 
-    REST is a well established API style and virtually every developer is familiar with it
-    
+  REST is a well established API style and virtually every developer is familiar with it
+
 - Ease of use.
 
-    Supporting tooling and libraries are available across all technology stacks.
-    
+  Supporting tooling and libraries are available across all technology stacks.
+
 Standards only make sense if they're well adopted, and familiarity and ease of use are critical in supporting developer adoption. We've learned this the hard way across a range of older GA4GH products, such as Beacon.
 
 # Format
@@ -73,13 +79,49 @@ WIth the OAS specification being the main artifact you're delivering, it's impor
 
 At minimum, you should make sure your specification is valid. Several GA4GH specifications use [OAS Validator](https://github.com/mcupak/oas-validator), we recommend you do the same.
 
-# License
+# Repository Setup
+
+## Hosting
+
+**TL;DR: GitHub.**
+
+You should use a _public_ repository on [GitHub](https://github.com).
+
+## Issues
+
+### Labels
+
+**TL;DR: feature, bug, task, wontfix.**
+
+You'll probably need at least 3 kinds of labels: _issue type_, _status_ and _requester_.
+
+For issue types, we recommend starting with 3 basic labels: _feature_ (new feature or request), _bug_ (something isn't working), and _task_ (a task not requiring code changes).
+
+For statuses, we recommend to start with a single _wontfix_ (this will not be worked on), to distinguish between closed issues that were resolved and rejected. Later on, you might choose to add more labels for finer-grained status notation, e.g. _in progress_.
+
+Optionally, you might want to label your issues based on who requested it through various channels, which would typically reflect names of driver projects.
+
+Consistency is good, and developers often contribute to many GA4GH repositories. You should use consistent issue names, descriptions and colour codes. See e.g. [service-info labels](https://github.com/ga4gh-discovery/ga4gh-service-info/labels).
+
+### Milestones
+
+**TL;DR: SemVer releases, 1.0.0.**
+
+Having milestones reflecting releases as per [semantic versioning](https://semver.org) is a good practice. You'll probably want to start with _1.0.0_ as the first major release with backward compatibility commitment, to capture the specification at a point where it will be reviewed by the PRC. To pass product review, you'll need several implementations from the driver projects, who will continuously need a stable version of the specification to develop against. Start with the _0.1_ milestone for your first usable spec and go from there as per semantic versioning.
+
+## License
 
 **TL;DR: Apache 2.0.**
 
 While GA4GH does not prescribe a particular license, practically all our projects use [Apache 2.0](/LICENSE). This will most likely suit your needs.
 
 Include the license text in your repository [like this](LICENSE).
+
+# Versioning
+
+**TL;DR: SemVer.**
+
+[Semantic versioning](https://semver.org) is used across GA4GH. It's a good practice to use 1.0.0 release as the target for PRC approval.
 
 # FAQ
 
