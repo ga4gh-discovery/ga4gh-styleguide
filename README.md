@@ -6,7 +6,6 @@ We draw from experience developing several mature APIs across a range of GA4GH w
 
 # Table of Contents
 
-[//]: # (- documentation, GitFLow, Contributing, Apache voting, propertyNaming, styleguide hierarchy, URI/URN/ID/contact, Swagger tools, CI validation, commit message convention, default repository facets enabled, repository naming, hosting on github)
 - [Style](#style)
 - [Format](#format)
 - [File Type](#file-type)
@@ -20,7 +19,8 @@ We draw from experience developing several mature APIs across a range of GA4GH w
 - [License](#license)
 - [Versioning](#versioning)
 - [FAQ](#faq)
-    
+- [TODO](#todo)
+
 # Style
 
 **TL;DR: REST.**
@@ -55,7 +55,11 @@ The choice between OpenAPI and JSON Schema comes down to the scope of your speci
 
 Once you decide to use OpenAPI, you have a choice between version 3, and older 2. Majority of GA4GH specifications use version 3, and we recommend you do the same. However, it should be noted that even though OpenAPI 3 was released mid-2017, as of mid-2019, this version of the specification sometimes has only experimental support common tooling (validation, compliance testing etc.). In general, that has not been a big issue for us, but keep the tooling in mind when making the decision.
 
-# File type
+# OpenAPI
+
+## Basic conventions
+
+## File type
 
 **TL;DR: YAML.**
 
@@ -63,7 +67,7 @@ An OpenAPI document that conforms to the specification is itself a JSON object, 
 
 XML [is considered legacy and is not recommended](https://everypageispageone.com/2016/01/28/why-does-xml-suck/).
 
-# File name
+## File name
 
 **TL;DR: `openapi.yaml`.**
 
@@ -71,7 +75,7 @@ Most likely, your specification is going to consist of a single file. We recomme
 
 If your specification consists of multiple files, prefer domain-specific names.
 
-# Testing
+## Testing
 
 **TL;DR: Travis CI with OAS Validator.**
 
@@ -123,8 +127,36 @@ Include the license text in your repository [like this](LICENSE).
 
 [Semantic versioning](https://semver.org) is used across GA4GH. It's a good practice to use 1.0.0 release as the target for PRC approval.
 
+# Tools
+
+Tools you might find useful for your specifications:
+
+- [GA4GH Specification Template](https://github.com/mcupak/ga4gh-specification-template)
+- [OAS Validator](https://github.com/mcupak/oas-validator)
+- [service-info](https://github.com/ga4gh-discovery/ga4gh-service-info)
+
 # FAQ
 
 ### Is this an official GA4GH style guide I have to follow?
 
 This style guide has not gone through any formal approval process and is not mandatory in any way. Having said that, this style guide reflects what we consider good development practices, which have been validated over the years in the context of several GA4GH products. Consistency and interoperability are important - developers often work on several specifications across a range of workstreams, and GA4GH products live in the same ecosystem, where they need to interoperate. If you're looking to implement your standard in a consistent and interoperable way, please consider this document. For ease of use, we recommend linking to [this README.md](README.md) from the README.md in the repository of your specification.
+
+# TODO
+
+- Documentation
+- GitFLow
+- Contributing rules
+- Apache voting
+- Property naming
+- Styleguide hierarchy
+- URI/URN/ID/contact
+- Swagger tools
+- Badges
+- CI validation
+- commit message convention
+- default repository facets enabled
+- repository naming
+- API extensions
+- Service types and API referral
+- Service info
+- Error representation
